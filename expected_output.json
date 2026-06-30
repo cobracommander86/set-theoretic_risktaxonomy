@@ -1,0 +1,78 @@
+{
+  "classification_results": [
+    {
+      "candidate": "Geopolitical Risk",
+      "metrics": {
+        "breadth": 6,
+        "cr": 0.25,
+        "hhi": 0.18
+      },
+      "tests": {
+        "relevance": "DRIVER",
+        "distinction": "DRIVER",
+        "materiality": "DRIVER"
+      },
+      "classification": "DRIVER",
+      "parent_risk": null,
+      "rationale": "BREADTH=6 (affects 6 L1 categories); CR=0.25 < 0.50; HHI=0.18 < 0.25; Tests: Relevance=DRIVER, Distinction=DRIVER, Materiality=DRIVER"
+    },
+    {
+      "candidate": "Model Risk",
+      "metrics": {
+        "breadth": 4,
+        "cr": 0.72,
+        "hhi": 0.55
+      },
+      "tests": {
+        "relevance": "SUB-RISK",
+        "distinction": "SUB-RISK",
+        "materiality": "SUB-RISK"
+      },
+      "classification": "SUB-RISK",
+      "parent_risk": "Operational Risk",
+      "rationale": "BREADTH=4 (affects 4 L1 categories); CR=0.72 ≥ 0.50; HHI=0.55 ≥ 0.25; Tests: Relevance=SUB-RISK, Distinction=SUB-RISK, Materiality=SUB-RISK; Factorization parent: Operational Risk"
+    },
+    {
+      "candidate": "Climate Risk",
+      "metrics": {
+        "breadth": 4,
+        "cr": 0.35,
+        "hhi": 0.275
+      },
+      "tests": {
+        "relevance": "DRIVER",
+        "distinction": "DRIVER",
+        "materiality": "SUB-RISK"
+      },
+      "classification": "DRIVER",
+      "parent_risk": null,
+      "rationale": "BREADTH=4 (affects 4 L1 categories); CR=0.35 < 0.50; HHI=0.28 ≥ 0.25; Tests: Relevance=DRIVER, Distinction=DRIVER, Materiality=SUB-RISK; Majority rule: 2/3 DRIVER"
+    },
+    {
+      "candidate": "Digital Assets Risk",
+      "metrics": {
+        "breadth": 6,
+        "cr": 0.35,
+        "hhi": 0.23
+      },
+      "tests": {
+        "relevance": "DRIVER",
+        "distinction": "DRIVER",
+        "materiality": "DRIVER"
+      },
+      "classification": "DRIVER",
+      "parent_risk": null,
+      "rationale": "BREADTH=6 (affects all 6 L1 categories); CR=0.35 < 0.50; HHI=0.23 < 0.25; Tests: Relevance=DRIVER, Distinction=DRIVER, Materiality=DRIVER; Unanimous DRIVER classification"
+    }
+  ],
+  "_validation": {
+    "description": "Expected output for manuscript case studies",
+    "alignment": {
+      "geopolitical_risk": "DRIVER (unanimous) - consistent with cross-cutting treatment in regulatory practice",
+      "model_risk": "SUB-RISK under Operational (unanimous) - consistent with Basel SR 11-7",
+      "climate_risk": "DRIVER (2/3 majority) - Materiality test indicates SUB-RISK due to HHI=0.275, but Relevance and Distinction tests override; consistent with NGFS/TCFD cross-cutting treatment",
+      "digital_assets_risk": "DRIVER (unanimous) - consistent with emerging regulatory treatment (OCC, SEC, Basel BCBS) recognizing cross-cutting nature spanning market volatility, operational/custody risks, and counterparty exposures"
+    },
+    "note": "Climate Risk demonstrates the majority-rule decision logic: despite meeting the HHI threshold (0.275 ≥ 0.25), the candidate is classified as DRIVER because 2 of 3 tests favor that classification. Digital Assets Risk shows unanimous DRIVER classification with dispersed impact across all six L1 categories."
+  }
+}

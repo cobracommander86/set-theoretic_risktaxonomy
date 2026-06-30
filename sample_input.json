@@ -1,0 +1,93 @@
+{
+  "l1_risks": [
+    {
+      "name": "Credit Risk",
+      "attributes": ["external", "financial", "market-driven"],
+      "definition": "Risk of loss arising from a borrower's failure to meet contractual obligations"
+    },
+    {
+      "name": "Market Risk",
+      "attributes": ["external", "financial", "market-driven"],
+      "definition": "Risk of losses in positions arising from movements in market prices"
+    },
+    {
+      "name": "Operational Risk",
+      "attributes": ["internal", "operational", "process-driven"],
+      "definition": "Risk of loss resulting from inadequate or failed processes, people, systems, or external events"
+    },
+    {
+      "name": "Strategic Risk",
+      "attributes": ["internal", "strategic", "decision-driven"],
+      "definition": "Risk arising from adverse business decisions, improper implementation of decisions, or lack of responsiveness to industry changes"
+    },
+    {
+      "name": "Liquidity Risk",
+      "attributes": ["internal", "financial", "market-driven"],
+      "definition": "Risk that an entity will be unable to meet short-term financial demands"
+    },
+    {
+      "name": "Reputational Risk",
+      "attributes": ["external", "behavioral", "event-driven"],
+      "definition": "Risk of damage to reputation affecting stakeholder trust and confidence"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Geopolitical Risk",
+      "attributes": ["external", "event-driven", "cross-cutting"],
+      "impact_weights": {
+        "Credit Risk": 0.15,
+        "Market Risk": 0.20,
+        "Operational Risk": 0.15,
+        "Strategic Risk": 0.25,
+        "Liquidity Risk": 0.15,
+        "Reputational Risk": 0.10
+      }
+    },
+    {
+      "name": "Model Risk",
+      "attributes": ["internal", "process-driven", "operational"],
+      "impact_weights": {
+        "Credit Risk": 0.00,
+        "Market Risk": 0.14,
+        "Operational Risk": 0.72,
+        "Strategic Risk": 0.08,
+        "Liquidity Risk": 0.06,
+        "Reputational Risk": 0.00
+      }
+    },
+    {
+      "name": "Climate Risk",
+      "attributes": ["external", "market-driven", "cross-cutting", "financial"],
+      "impact_weights": {
+        "Credit Risk": 0.35,
+        "Market Risk": 0.30,
+        "Operational Risk": 0.20,
+        "Strategic Risk": 0.15,
+        "Liquidity Risk": 0.00,
+        "Reputational Risk": 0.00
+      }
+    },
+    {
+      "name": "Digital Assets Risk",
+      "attributes": ["external", "financial", "market-driven", "cross-cutting"],
+      "impact_weights": {
+        "Credit Risk": 0.10,
+        "Market Risk": 0.35,
+        "Operational Risk": 0.25,
+        "Strategic Risk": 0.15,
+        "Liquidity Risk": 0.10,
+        "Reputational Risk": 0.05
+      }
+    }
+  ],
+  "thresholds": {
+    "cr": 0.50,
+    "hhi": 0.25
+  },
+  "_metadata": {
+    "description": "Sample input reproducing manuscript case studies (Geopolitical, Model, Climate, Digital Assets risks)",
+    "source": "Faria, M. (2026). A Set-Theoretic Framework for Enterprise Risk Taxonomy Classification",
+    "weight_derivation": "Author's professional judgment informed by professional experience, Basel SR 11-7, NGFS/TCFD guidance, Caldara & Iacoviello (2022), and emerging digital asset regulatory frameworks (OCC, SEC, Basel BCBS)"
+  }
+}
